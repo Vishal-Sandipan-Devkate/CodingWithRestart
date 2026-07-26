@@ -1,5 +1,19 @@
 import java.util.*;
 
+// class to find largest even digit in number
+class LargestEvenDigitInNumber{
+	int largestEvenDigitFinder(int num){
+		int largeEvenDigit=-1;
+		while(num>0){
+			int digit = num%10;
+			if(digit % 2 == 0 && digit >largeEvenDigit){
+				largeEvenDigit = digit;
+			}
+			num/=10;
+		}
+		return largeEvenDigit;
+	}
+}
 // class to find the sum of all digits in number
 class SumOfDigitInNumber{
 	int additionOfDigit(int num){
@@ -76,7 +90,9 @@ public class Main{
 			// int result = sod.additionOfDigit(num);
 			// System.out.println("sum of digits in number:" + result);
 
-
+			LargestEvenDigitInNumber ledin = new LargestEvenDigitInNumber();
+			int larEvenDigit = ledin.largestEvenDigitFinder(num);
+			System.out.println("Largest Even Digit:"+ larEvenDigit);
 			// close scanner object
 			sc.close();
 	}
